@@ -20,7 +20,7 @@ public class Security extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf().disable().authorizeRequests()
-		
+		//abre espaco para http method e web
 		.antMatchers(HttpMethod.GET, "/").permitAll()
 		.antMatchers(HttpMethod.POST, "/cadastrar").permitAll()
 		
@@ -28,7 +28,7 @@ public class Security extends WebSecurityConfigurerAdapter {
 		.antMatchers(HttpMethod.POST, "/cadastrarTema").hasRole("ADMIN")
 		.antMatchers(HttpMethod.GET, "/formtema").permitAll()
 		.antMatchers(HttpMethod.POST, "/formTema").hasRole("ADMIN")
-		.anyRequest().authenticated()
+		.anyRequest().authenticated() //qualquer outra coisa
 		.and().formLogin().permitAll()
 		.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));	
 	}
