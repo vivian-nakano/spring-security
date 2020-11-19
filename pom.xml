@@ -12,7 +12,7 @@
 	<groupId>org.generation</groupId>
 	<artifactId>blogPessoal</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging> <!-- WAR: quando tem muita aplicação front end, aí trocamos pra JAR -->
 	<name>blogPessoal</name>
 	<description>Primeiro projeto de Spring</description>
 
